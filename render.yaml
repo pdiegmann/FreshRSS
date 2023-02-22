@@ -4,7 +4,7 @@ services:
     env: docker
     region: frankfurt
     plan: free
-    rootDir: freshrss
+    rootDir: ./freshrss
     dockerfilePath: ./Docker/Dockerfile
     dockerContext: ./
     envVars:
