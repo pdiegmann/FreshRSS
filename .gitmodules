@@ -1,0 +1,3 @@
+[submodule "freshrss"]
+	path = freshrss
+	url = https://github.com/FreshRSS/FreshRSS.git
