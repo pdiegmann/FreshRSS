@@ -29,7 +29,9 @@ services:
       
 databases:
   - name: freshrssdb
-    databaseName: freshrss # optional (Render may add a suffix)
+    databaseName: freshrss    
+    region: frankfurt
+    plan: free
     
 envVarGroups:
   - name: conc-settings
