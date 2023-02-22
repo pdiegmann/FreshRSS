@@ -12,6 +12,7 @@ services:
       - key: BASE_URL
         fromService:
           name: freshrss
+          type: web
           property: host
       - key: DB_HOST
         fromDatabase:
