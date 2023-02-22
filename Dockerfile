@@ -1,7 +1,6 @@
 FROM freshrss/freshrss:latest
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 WORKDIR /var/www/FreshRSS
-ENTRYPOINT ["./entrypoint.sh"]
 EXPOSE 80
 CMD ([ -z "$CRON_MIN" ] || cron) && \
 	. /etc/apache2/envvars && \
