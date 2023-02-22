@@ -42,6 +42,6 @@ envVarGroups:
       - key: ADMIN_API_PASSWORD
         generateValue: true
       - key: ADMIN_EMAIL
-        sync: false
+        sync: true
       - key: ADMIN_PASSWORD
         generateValue: true
