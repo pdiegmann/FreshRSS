@@ -1,0 +1,44 @@
+services:
+  # A Docker web service
+  - type: web
+    name: freshrss
+    env: docker
+    region: frankfurt
+    plan: free
+    rootDir: ./
+    dockerCommand: ./webdis.sh # optional (defaults to Dockerfile command)
+    healthCheckPath: /
+    envVars:
+      - fromGroup: conc-settings
+      - key: BASE_URL
+        fromDatabase:
+          name: freshrssdb
+          property: connectionString
+      - key: DB_USER
+        fromDatabase:
+          name: freshrssdb
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: freshrssdb
+          property: password
+      - key: DB_BASE
+        fromDatabase:
+          name: freshrssdb
+          property: database
+      
+databases:
+  - name: freshrssdb
+    databaseName: freshrss # optional (Render may add a suffix)
+    
+envVarGroups:
+  - name: conc-settings
+    envVars:
+      - key: ADMIN_API_PASSWORD
+        generateValue: true
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        generateValue: true
+      - key: BASE_URL
+        sync: false
