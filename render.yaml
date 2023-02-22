@@ -4,9 +4,9 @@ services:
     env: docker
     region: frankfurt
     plan: free
-    rootDir: ./freshrss
-    dockerfilePath: ./Docker/Dockerfile
-    dockerContext: ./
+    rootDir: freshrss/Docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
     envVars:
       - fromGroup: conc-settings
       - key: BASE_URL
