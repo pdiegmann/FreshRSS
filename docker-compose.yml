@@ -20,3 +20,19 @@ services:
     environment:
       TZ: Europe/Berlin
       CRON_MIN: '3,33'
+      FRESHRSS_INSTALL: |-
+        --api_enabled
+        --base_url ${BASE_URL}
+        --db-base ${DB_BASE}
+        --db-host ${DB_HOST}
+        --db-password ${DB_PASSWORD}
+        --db-type pgsql
+        --db-user ${DB_USER}
+        --default_user admin
+        --language en
+      FRESHRSS_USER: |-
+        --api_password ${ADMIN_API_PASSWORD}
+        --email ${ADMIN_EMAIL}
+        --language en
+        --password ${ADMIN_PASSWORD}
+        --user admin
