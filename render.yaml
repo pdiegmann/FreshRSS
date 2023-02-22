@@ -16,7 +16,7 @@ services:
       - key: DB_HOST
         fromDatabase:
           name: freshrssdb
-          property: connectionString
+          property: host
       - key: DB_USER
         fromDatabase:
           name: freshrssdb
